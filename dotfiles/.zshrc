@@ -112,13 +112,3 @@ source $ZSH/oh-my-zsh.sh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-mkdir /root/.zsh_autorun
-chmod +x /root/.zsh_autorun
-
-# Run all .sh scripts in ~/.zsh_autorun at shell startup
-for script in /root/.zsh_autorun/*.sh(N); do
-  if [ -f "$script" ] && [ -x "$script" ]; then
-    "$script" >> ~/autorun.log 2>&1
-  fi
-done

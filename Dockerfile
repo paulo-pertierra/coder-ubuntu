@@ -24,14 +24,12 @@ htop \
 
 RUN ln -s /usr/bin/nodejs /usr/bin/node || true
 
-RUN sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-
-ENV ZSH_CUSTOM=/root/.oh-my-zsh/custom
-
 RUN git config --global init.defaultBranch main
-
-RUN git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
 
 RUN chsh -s /bin/zsh root
 
-COPY dotfiles/ /root/
+COPY dotfiles/ /dotfiles/
+
+COPY entrypoint.sh /entrypoint.sh
+
+RUN chmod +x /entrypoint.sh
