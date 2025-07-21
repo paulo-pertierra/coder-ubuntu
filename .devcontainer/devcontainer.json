@@ -1,0 +1,11 @@
+{
+  "name": "Express Devcontainer with Docker (Sysbox)",
+  "image": "titopow/ubuntu-coder:latest",
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "terminal.integrated.shell.linux": "/bin/bash"
+      }
+    }
+  }
+}
