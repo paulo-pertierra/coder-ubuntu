@@ -8,6 +8,8 @@ if [ ! -d /root/.oh-my-zsh ]; then
     echo "Could not install Oh My Zsh" >/dev/stderr
     exit 1
   }
+
+  git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
 else
   echo "Oh My Zsh already installed, skipping."
 fi
